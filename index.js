@@ -41,43 +41,37 @@ function onDeviceReady(){
 }
 
 	 
-function refreshDeviceList(){
-	//deviceList =[];
-	document.getElementById("bleDeviceList").innerHTML = ''; // empties the list
-	if (cordova.platformId === 'android') { // Android filtering is broken
-		ble.scan([], 5, onDiscoverDevice, onError);
-	} else {
-		//alert("Disconnected");
-		ble.scan([blue.serviceUUID], 5, onDiscoverDevice, onError);
-	}
+function refreshDeviceList() {
+    //deviceList =[];
+    document.getElementById("bleDeviceList").innerHTML = ''; // empties the list
+    if (cordova.platformId === 'android') { // Android filtering is broken
+        ble.scan([], 5, onDiscoverDevice, onError);
+    } else {
+        //alert("Disconnected");
+        ble.scan([blue.serviceUUID], 5, onDiscoverDevice, onError);
+    }
 }
 
+function onDiscoverDevice(device) {
+    //Make a list in html and show devises
+    if (device.name.includes("LAMPE") == true) {
 
-function onDiscoverDevice(device){
-	//Make a list in html and show devises
-	if(device.name.includes("LAMPE")==true){
-		
-		var listItem = document.createElement('li'),
-		html = device.name+ "," + device.id;
-		listItem.innerHTML = html;
-		document.getElementById("bleDeviceList").appendChild(listItem);
-	}
+        var listItem = document.createElement('li'),
+        html = device.name;
+        listItem.innerHTML = html;
+        document.getElementById("bleDeviceList").appendChild(listItem);
+    }
 }
-
 
  
 function conn(){
-	var  deviceTouch= event.srcElement.innerHTML;
-	document.getElementById("debugDiv").innerHTML =""; // empty debugDiv
-	var deviceTouchArr = deviceTouch.split(",");
-	ConnDeviceId = deviceTouchArr[1];
-	bleDeviceName = deviceTouchArr[0];
-	document.getElementById("debugDiv").innerHTML += "<br>Debug: <br>"+deviceTouchArr[0]+"<br>"+deviceTouchArr[1]; //for debug:
-	
-	if(bleDeviceName  == "BORDLAMPE", "STUELAMPE" )
-		
-		test();
- }
+	 var deviceTouch = event.srcElement.innerHTML;
+    document.getElementById("debugDiv").innerHTML = ""; // empty debugDiv
+    var deviceTouchArr = deviceTouch.split(",");
+    ConnDeviceId = deviceTouchArr[1];
+    bleDeviceName = deviceTouchArr[0];
+    document.getElementById("debugDiv").innerHTML += "<br>Debug: <br>" + deviceTouchArr[0] + "<br>" + deviceTouchArr[1]; //for debug:
+}
  
 
 function onError(reason)  {

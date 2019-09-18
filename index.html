@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>	
 		
 		<title>Smart Light</title>
-		<link rel = "stylesheet" type = "text/css" href = "style.css">  
+		<link rel = "stylesheet" type = "text/css" href = "login.css">  
 		<script type="text/javascript" src="cordova.js"></script> 
         <script type="text/javascript" src="js/index.js"></script>
 		
@@ -15,33 +15,32 @@
 	<body onload="onLoad()">
 	
 	<center>
-	
 	<div class="imgcontainer">
 		<img src="light.png">
 		</div>
 	
-	
-        <div id="title" class="container">
-            <h1>SMART LIGHT DEVICES</h1><br />
-        </div>
-	
-		<div id="test" class="container">
-        <ul id="bleDeviceList"> </ul>
-		<ul id="bleDeviceList"> </ul> 
-		<button id="refreshButton" onClick = "refreshDeviceList()">Refresh</button>
-		<br>
 		
+		
+	
+	<form>
+        <div id="test" class="container">
+            <h1>SmartLight</h1><br />
         </div>
+        <div id="test" class="container">
+            <ul id="bleDeviceList"> </ul>
+            <br /><br /><br /><br /><br />
+            <button id="refreshButton" onClick="refreshDeviceList()">Refresh</button>
+           <br /><br /> <br />
 		
 		
 		
 	
 		<button id ="testButton1" onClick = "test()">Login</button>	<br><br>
-		
-		
-		
-		
+
+		</div>
 		</center>
+    </form>
+		
 		
 	</body>
 	

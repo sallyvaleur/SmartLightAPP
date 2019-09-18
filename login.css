@@ -1,13 +1,15 @@
-body {
+﻿body {
     background-color: white;
+    align-items: center;
 }
 
 form {
     
+    
 }
 
-input[type=tel]{
-    width: 400px;
+input[type=tel] {
+    width: auto;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -22,31 +24,27 @@ button {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100px;
+    width: auto;
+    align-items: center;
 }
 
-button:hover{
-    opacity: 0.8;
-}
+    button:hover {
+        opacity: 0.8;
+    }
 
 .container {
     padding: 16px;
-    margin: auto;
-    width: 500px;
-    border: 10px;
 }
 
 
 #test {
     font-family: monospace;
     font-size: 20px;
-    
     color: black;
-    text-align: left;
-    
+    text-align: center;
 }
 
-#title{
+#title {
     font-family: monospace;
     font-size: large;
     text-align: center;
