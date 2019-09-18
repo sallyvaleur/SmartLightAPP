@@ -64,18 +64,27 @@ function onDiscoverDevice(device){
 	//}
 }
 
-
 function conn(){
+	var  deviceTouch= event.srcElement.innerHTML;
+	document.getElementById("debugDiv").innerHTML =""; // empty debugDiv
+	var deviceTouchArr = deviceTouch.split(",");
+	ConnDeviceId = deviceTouchArr[1];
+	document.getElementById("debugDiv").innerHTML += "<br>"+deviceTouchArr[0]+"<br>"+deviceTouchArr[1]; //for debug:
+	ble.connect(ConnDeviceId, onConnect, onConnError);
+ }
+ 
+/*function conn(){
 	var  deviceTouch= event.srcElement.innerHTML;
 	document.getElementById("debugDiv").innerHTML =""; // empty debugDiv
 	var deviceTouchArr = deviceTouch.split(",");
 	ConnDeviceId = deviceTouchArr[1];
 	bleDeviceName = deviceTouchArr[0];
 	document.getElementById("debugDiv").innerHTML += "<br>Debug: <br>"+deviceTouchArr[0]+"<br>"+deviceTouchArr[1]; //for debug:
+	
 	if(bleDeviceName  == "BORDLAMPE" )
 		
 		test();
- }
+ }*/
  
 
 function onError(reason)  {
