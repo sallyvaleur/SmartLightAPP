@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -6,52 +5,41 @@
         <meta charset="utf-8">     
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>	
 		
-		<title>Smart Lights</title>
-		
-		<link rel = "stylesheet" type = "text/css" href = "style.css">   <!-- Link to style sheet named format.css -->
+		<title>Smart Light</title>
+		<link rel = "stylesheet" type = "text/css" href = "style.css">  
 		<script type="text/javascript" src="cordova.js"></script> 
         <script type="text/javascript" src="js/index.js"></script>
 		
 	</head>
-	
+
 	<body onload="onLoad()">
 	
-	
-	
-	<form>
 	<center>
-		
-		
 	<div class="imgcontainer">
 		<img src="light.png">
 		</div>
 	
 	
         <div id="title" class="container">
-            <h1>SMART LIGHT</h1><br />
+            <h1>SMART LIGHT DEVICES</h1><br />
         </div>
+	
+	
+		
+		<ul id="bleDeviceList"> </ul> 
+		<button id="refreshButton" onClick = "refreshDeviceList()">Refresh</button>
+		<br>
 		
 		
 		
-        <div id="test" class="container">
-            
-
-            <label for="psw"><b>Password</b></label>
-            <br />
-            <input type="tel" placeholder="Enter Password" name="psw" required>
-            <br />
-            <button type="submit">Login</button>
-
-        </div>
+		
+		<br><br>
+		<div id="debugDiv"></div>
+		<br>
+		<button id ="testButton1" onClick = "test()">Login</button>	<br><br>
+		
 		</center>
-    </form>
-	
-	
-	
-	
-	
-	
-	
+		
 	</body>
 	
-	</html>
+</html>
