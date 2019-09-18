@@ -55,7 +55,7 @@ function refreshDeviceList(){
 
 function onDiscoverDevice(device){
 	//Make a list in html and show devises
-	if(device.name == "STUELAMPE", "BORDLAMPE"){
+	if(device.name == "BORDLAMPE"){
 		
 		var listItem = document.createElement('li'),
 		html = device.name+ "," + device.id;
@@ -72,7 +72,7 @@ function conn(){
 	ConnDeviceId = deviceTouchArr[1];
 	bleDeviceName = deviceTouchArr[0];
 	document.getElementById("debugDiv").innerHTML += "<br>Debug: <br>"+deviceTouchArr[0]+"<br>"+deviceTouchArr[1]; //for debug:
-	if(bleDeviceName  == "STUELAMPE", "BORDLAMPE")
+	if(bleDeviceName  == "BORDLAMPE")
 		
 		test();
  }
